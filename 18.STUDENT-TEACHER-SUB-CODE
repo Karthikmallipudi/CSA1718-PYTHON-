@@ -1,0 +1,21 @@
+% Facts: teacher(TeacherName, Subject)
+teacher(john_doe, mathematics).
+teacher(jane_smith, literature).
+teacher(bob_jones, history).
+
+% Facts: student(StudentName, Subject)
+student(alice, mathematics).
+student(bob, literature).
+student(charlie, history).
+student(david, mathematics).
+student(eva, history).
+
+% Rule: student_teaches_subject(StudentName, Subject)
+student_teaches_subject(StudentName, Subject) :-
+    student(StudentName, Subject),
+    teacher(TeacherName, Subject).
+
+% Example usage:
+% To find students and their teachers in a specific subject, use:
+% ?- student_teaches_subject(StudentName, mathematics).
+% This will return students and their corresponding teachers in the mathematics subject.
